@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ChatGPT AI Scanner</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header class="hero">
+        <h1>ChatGPT AI Scanner</h1>
+        <p>Paste any text and let AI scan it for summary, risk, sentiment, and action items.</p>
+      </header>
+
+      <main class="panel">
+        <form id="scanner-form">
+          <div class="field-row">
+            <label for="mode">Scan mode</label>
+            <select id="mode" name="mode">
+              <option value="summary">Summary</option>
+              <option value="risks">Risks</option>
+              <option value="sentiment">Sentiment</option>
+              <option value="actions">Action items</option>
+            </select>
+          </div>
+
+          <div class="field-row">
+            <label for="url">Source URL (optional)</label>
+            <input id="url" name="url" type="url" placeholder="https://example.com" />
+          </div>
+
+          <div class="field-row">
+            <label for="content">Content to scan</label>
+            <textarea
+              id="content"
+              name="content"
+              rows="12"
+              placeholder="Paste text here..."
+            ></textarea>
+          </div>
+
+          <button type="submit" id="scan-button">Run scan</button>
+        </form>
+
+        <section class="results">
+          <h2>Results</h2>
+          <div id="status" class="status">Awaiting scan...</div>
+          <pre id="result-output">No content analyzed yet.</pre>
+        </section>
+      </main>
+    </div>
+
+    <script src="/app.js"></script>
+  </body>
+</html>
